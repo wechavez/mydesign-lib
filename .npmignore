@@ -1,0 +1,8 @@
+node_modules/
+src/
+tests/
+coverage/
+vitest.config.ts
+rollup.config.js
+tsconfig.json
+*.log
