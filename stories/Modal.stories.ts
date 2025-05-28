@@ -115,6 +115,115 @@ const Template = ({
   `;
 };
 
+// New template specifically for custom footer content
+const CustomFooterTemplate = ({
+  open,
+  headerContent,
+  bodyContent,
+  onModalStateChange,
+}) => {
+  return html`
+    <div>
+      <my-button
+        variant="primary"
+        @click=${(e) => {
+          const modal = e.target.parentElement.querySelector("my-modal");
+          if (modal) {
+            modal.setAttribute("open", "");
+          }
+        }}
+      >
+        Open Modal
+      </my-button>
+
+      <my-modal ?open=${open} @modal-state-change=${onModalStateChange}>
+        <div slot="header">
+          <h2>${headerContent}</h2>
+        </div>
+        <p>${bodyContent}</p>
+        <div slot="footer">
+          <my-button
+            variant="danger"
+            size="small"
+            @click=${(e) => {
+              const modal = e.target.closest("my-modal");
+              if (modal) {
+                modal.removeAttribute("open");
+              }
+            }}
+          >
+            Delete
+          </my-button>
+        </div>
+      </my-modal>
+    </div>
+  `;
+};
+
+const LongContentTemplate = ({
+  open,
+  headerContent,
+  bodyContent,
+  onModalStateChange,
+}) => {
+  return html`
+    <div>
+      <my-button
+        variant="primary"
+        @click=${(e) => {
+          const modal = e.target.parentElement.querySelector("my-modal");
+          if (modal) {
+            modal.setAttribute("open", "");
+          }
+        }}
+      >
+        Open Modal
+      </my-button>
+
+      <my-modal ?open=${open} @modal-state-change=${onModalStateChange}>
+        <div slot="header">
+          <h2>${headerContent}</h2>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            euismod, nisl eget aliquam ultricies, quam sapien aliquet nunc,
+            vitae aliquam nisl nisl vitae nisl.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            euismod, nisl eget aliquam ultricies, quam sapien aliquet nunc,
+            vitae aliquam nisl nisl vitae nisl.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            euismod, nisl eget aliquam ultricies, quam sapien aliquet nunc,
+            vitae aliquam nisl nisl vitae nisl.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            euismod, nisl eget aliquam ultricies, quam sapien aliquet nunc,
+            vitae aliquam nisl nisl vitae nisl.
+          </p>
+        </div>
+        <div slot="footer">
+          <my-button
+            variant="primary"
+            size="small"
+            @click=${(e) => {
+              const modal = e.target.closest("my-modal");
+              if (modal) {
+                modal.removeAttribute("open");
+              }
+            }}
+            >Close</my-button
+          >
+        </div>
+      </my-modal>
+    </div>
+  `;
+};
+
 export const Default = Template.bind({});
 Default.args = {
   open: false,
@@ -131,27 +240,17 @@ InitiallyOpen.args = {
   footerContent: "",
 };
 
-export const WithCustomFooter = Template.bind({});
+export const WithCustomFooter = CustomFooterTemplate.bind({});
 WithCustomFooter.args = {
   open: false,
   headerContent: "Custom Footer",
-  bodyContent: "This modal has a custom footer.",
-  footerContent: '<my-button variant="danger" size="small">Delete</my-button>',
+  bodyContent: "This modal has a custom footer with a delete button.",
 };
 
-export const LongContent = Template.bind({});
+export const LongContent = LongContentTemplate.bind({});
 LongContent.args = {
   open: false,
   headerContent: "Long Content Modal",
-  bodyContent: `
-    <p>This modal has a lot of content to demonstrate scrolling.</p>
-    ${Array(10)
-      .fill(
-        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, quam sapien aliquet nunc, vitae aliquam nisl nisl vitae nisl.</p>"
-      )
-      .join("")}
-  `,
-  footerContent: "",
 };
 
 export const NoFooter = Template.bind({});
@@ -160,12 +259,4 @@ NoFooter.args = {
   headerContent: "Modal Without Footer",
   bodyContent: "This modal has no footer buttons.",
   footerContent: " ", // space character to override default buttons
-};
-
-export const InformationModal = Template.bind({});
-InformationModal.args = {
-  open: false,
-  headerContent: "Information",
-  bodyContent: "This is an information modal with only a close button.",
-  footerContent: '<my-button variant="primary" size="small">Close</my-button>',
 };
