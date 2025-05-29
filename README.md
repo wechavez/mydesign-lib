@@ -9,6 +9,10 @@ https://wechavez.github.io/mydesign-lib/
 - Angular: https://wc-lib-angular-demo.vercel.app/
 - React: https://wc-lib-react-demo.vercel.app/
 
+## Framework Examples
+- Angular: https://github.com/wechavez/wc-lib-angular-demo
+- React: https://github.com/wechavez/wc-lib-react-demo
+
 ## Installation
 
 ```bash
