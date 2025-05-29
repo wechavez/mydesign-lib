@@ -9,13 +9,13 @@ https://wechavez.github.io/mydesign-lib/
 
 ```bash
 # Using npm
-npm install wec-mydesign-lib
+npm install @wechavez/wc-lib
 
 # Using yarn
-yarn add wec-mydesign-lib
+yarn add @wechavez/wc-lib
 
 # Using pnpm
-pnpm add wec-mydesign-lib
+pnpm add @wechavez/wc-lib
 ```
 
 ## Usage
@@ -26,10 +26,10 @@ You can use these components in any HTML file or web application by importing th
 
 ```javascript
 // Import all components
-import "wec-mydesign-lib";
+import "@wechavez/wc-lib";
 
 // Or import specific components
-import { MyButton, MyBadge, MyCard, MyModal } from "wec-mydesign-lib";
+import { MyButton, MyBadge, MyCard, MyModal } from "@wechavez/wc-lib";
 ```
 
 ## Components
