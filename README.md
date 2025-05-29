@@ -26,7 +26,7 @@ You can use these components in any HTML file or web application by importing th
 import "wec-mydesign-lib";
 
 // Or import specific components
-import { MyButton, MyCard, MyModal } from "wec-mydesign-lib";
+import { MyButton, MyBadge, MyCard, MyModal } from "wec-mydesign-lib";
 ```
 
 ## Components
@@ -90,6 +90,90 @@ A card component for grouping content with customizable elevation and border.
   - `2`, `3`, `4`, `5` - Progressively more pronounced shadows
 
 - `border`: Boolean attribute that adds a border when present
+
+### MyBadge
+
+A versatile badge component for displaying labels, status indicators, counts, or any highlighting information with multiple visual variants and colors.
+
+#### Usage
+
+```html
+<!-- Basic usage -->
+<my-badge>Default</my-badge>
+
+<!-- With attributes -->
+<my-badge variant="filled" color="primary" size="medium">Badge Text</my-badge>
+
+<!-- Status indicators -->
+<my-badge variant="soft" color="success">Active</my-badge>
+<my-badge variant="soft" color="warning">Pending</my-badge>
+<my-badge variant="soft" color="danger">Inactive</my-badge>
+
+<!-- Count badges -->
+<my-badge variant="filled" color="danger" size="small">3</my-badge>
+
+<!-- Outlined badges -->
+<my-badge variant="outlined" color="info">Draft</my-badge>
+```
+
+#### Attributes
+
+- `variant`: Defines the badge visual style
+
+  - `filled` (default) - Solid background with contrasting text
+  - `outlined` - Transparent background with colored border and text
+  - `soft` - Light background with darker text in the same color family
+
+- `color`: Controls the badge color theme
+
+  - `primary` (default) - Blue theme
+  - `secondary` - Gray theme
+  - `success` - Green theme for positive states
+  - `warning` - Yellow/orange theme for cautionary states
+  - `danger` - Red theme for error or critical states
+  - `info` - Blue theme for informational content
+  - `neutral` - Dark gray theme for neutral content
+
+- `size`: Controls the badge size
+
+  - `small` - Compact size (0.75rem font, 1.25rem min-height)
+  - `medium` (default) - Standard size (0.875rem font, 1.5rem min-height)
+  - `large` - Larger size (1rem font, 2rem min-height)
+
+#### Behavior
+
+- Badges have a subtle hover effect that slightly scales the element
+- All variants respond to hover with appropriate visual feedback
+- Content is displayed using the default slot, allowing for text or other inline elements
+
+#### Examples
+
+```html
+<!-- Status badges with soft variant -->
+<div>
+  <my-badge variant="soft" color="success" size="small">Online</my-badge>
+  <my-badge variant="soft" color="warning" size="small">Away</my-badge>
+  <my-badge variant="soft" color="danger" size="small">Offline</my-badge>
+</div>
+
+<!-- Notification count badge -->
+<div style="position: relative; display: inline-block;">
+  <button>Messages</button>
+  <my-badge 
+    variant="filled" 
+    color="danger" 
+    size="small" 
+    style="position: absolute; top: -8px; right: -8px;"
+  >5</my-badge>
+</div>
+
+<!-- Category labels with outlined variant -->
+<div>
+  <my-badge variant="outlined" color="info">Technology</my-badge>
+  <my-badge variant="outlined" color="success">Environment</my-badge>
+  <my-badge variant="outlined" color="warning">Business</my-badge>
+</div>
+```
 
 ### MyModal
 
