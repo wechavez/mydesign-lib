@@ -1,3 +1,5 @@
+import { FONT_FAMILY } from '../../styles/fonts';
+
 export class MyModal extends HTMLElement {
   constructor() {
     super();
@@ -40,6 +42,7 @@ export class MyModal extends HTMLElement {
           opacity: 0;
           transition: visibility 0s linear 0.25s, opacity 0.25s;
           z-index: 1000;
+          font-family: ${FONT_FAMILY.primary};
         }
         
         .modal-backdrop.open {

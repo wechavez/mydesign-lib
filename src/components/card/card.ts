@@ -1,3 +1,5 @@
+import { FONT_FAMILY } from '../../styles/fonts';
+
 export class MyCard extends HTMLElement {
   constructor() {
     super();
@@ -54,6 +56,7 @@ export class MyCard extends HTMLElement {
           box-shadow: ${shadowValue};
           border: ${borderStyle};
           display: block;
+          font-family: ${FONT_FAMILY.primary};
         }
         
         .card-content {

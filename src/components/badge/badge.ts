@@ -1,3 +1,5 @@
+import { FONT_FAMILY } from '../../styles/fonts';
+
 export class MyBadge extends HTMLElement {
   constructor() {
     super();
@@ -42,7 +44,7 @@ export class MyBadge extends HTMLElement {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: ${FONT_FAMILY.primary};
           font-weight: 500;
           line-height: 1;
           border-radius: 9999px;

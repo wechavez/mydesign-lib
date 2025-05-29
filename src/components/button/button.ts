@@ -1,3 +1,5 @@
+import { FONT_FAMILY } from '../../styles/fonts';
+
 export class MyButton extends HTMLElement {
   constructor() {
     super();
@@ -43,7 +45,7 @@ export class MyButton extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         button {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: ${FONT_FAMILY.primary};
           padding: 0.5em 1em;
           border: none;
           border-radius: 4px;
