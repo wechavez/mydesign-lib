@@ -5,6 +5,10 @@ MyDesign is a lightweight, customizable set of web components that can be used i
 ## Storybook
 https://wechavez.github.io/mydesign-lib/
 
+## Live Demo
+- Angular: https://wc-lib-angular-demo.vercel.app/
+- React: https://wc-lib-react-demo.vercel.app/
+
 ## Installation
 
 ```bash
