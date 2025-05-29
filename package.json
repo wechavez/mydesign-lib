@@ -29,10 +29,10 @@
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
     "version:major": "npm version major",
-    "publish:patch": "npm run build && npm run version:patch",
-    "publish:minor": "npm run build && npm run version:minor",
-    "publish:major": "npm run build && npm run version:major",
-    "publish": "npm run publish:patch"
+    "publish:patch": "npm run build && npm run version:patch && npm publish",
+    "publish:minor": "npm run build && npm run version:minor && npm publish",
+    "publish:major": "npm run build && npm run version:major && npm publish",
+    "publish-package": "npm run publish:patch"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.1",
