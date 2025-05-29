@@ -1,6 +1,6 @@
 {
   "name": "@wechavez/wc-lib",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/wechavez/mydesign-lib.git"
@@ -29,9 +29,9 @@
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
     "version:major": "npm version major",
-    "publish:patch": "npm run build && npm run version:patch && npm publish",
-    "publish:minor": "npm run build && npm run version:minor && npm publish",
-    "publish:major": "npm run build && npm run version:major && npm publish",
+    "publish:patch": "npm run build && npm run version:patch",
+    "publish:minor": "npm run build && npm run version:minor",
+    "publish:major": "npm run build && npm run version:major",
     "publish": "npm run publish:patch"
   },
   "devDependencies": {
